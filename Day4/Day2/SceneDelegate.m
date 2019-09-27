@@ -22,14 +22,22 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     navigationController.view.backgroundColor = [UIColor whiteColor];
     navigationController.tabBarItem.title = @"xinwen";
+    navigationController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home"];
+    navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected"];
 
     VideoViewController *controller2 = [[VideoViewController alloc] init];
+    controller2.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/like"];
+    controller2.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/like_selected"];
 
     ScrollViewController *controller3 = [[ScrollViewController alloc] init];
+    controller3.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page"];
+    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected"];
 
     UIViewController *controller4 = [[UIViewController alloc] init];
     controller4.view.backgroundColor = [UIColor yellowColor];
     controller4.tabBarItem.title = @"wode";
+    controller4.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/video"];
+    controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/video_selected"];
 
     [tabbarController setViewControllers:@[navigationController, controller2, controller3, controller4]];
     

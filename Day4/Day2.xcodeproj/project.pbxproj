@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		470954DE233BBA3900520CD8 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470954DD233BBA3900520CD8 /* VideoViewController.m */; };
 		472FE06E233D02FE006F3286 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472FE06D233D02FE006F3286 /* ScrollViewController.m */; };
+		472FE072233D8A89006F3286 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 472FE071233D8A89006F3286 /* icon.bundle */; };
 		47F2B54F233A57C800F97088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B54E233A57C800F97088 /* AppDelegate.m */; };
 		47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B551233A57C800F97088 /* SceneDelegate.m */; };
 		47F2B555233A57C800F97088 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B554233A57C800F97088 /* ViewController.m */; };
@@ -23,6 +24,7 @@
 		470954DD233BBA3900520CD8 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		472FE06C233D02FE006F3286 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		472FE06D233D02FE006F3286 /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		472FE071233D8A89006F3286 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = icon.bundle; path = "../../../../../Downloads/geektime-ios-course-master/project/SampleApp/icon.bundle"; sourceTree = "<group>"; };
 		47F2B54A233A57C800F97088 /* Day2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F2B54D233A57C800F97088 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47F2B54E233A57C800F97088 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				472FE06C233D02FE006F3286 /* ScrollViewController.h */,
 				472FE06D233D02FE006F3286 /* ScrollViewController.m */,
 				47F2B551233A57C800F97088 /* SceneDelegate.m */,
+				472FE071233D8A89006F3286 /* icon.bundle */,
 				47F2B553233A57C800F97088 /* ViewController.h */,
 				47F2B554233A57C800F97088 /* ViewController.m */,
 				47F2B556233A57C800F97088 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472FE072233D8A89006F3286 /* icon.bundle in Resources */,
 				47F2B55D233A57CB00F97088 /* LaunchScreen.storyboard in Resources */,
 				47F2B55A233A57CB00F97088 /* Assets.xcassets in Resources */,
 				47F2B558233A57C800F97088 /* Main.storyboard in Resources */,
