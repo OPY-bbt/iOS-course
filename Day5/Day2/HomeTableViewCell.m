@@ -15,6 +15,10 @@
 @property(nonatomic, strong, readwrite) UILabel *commentLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
 
+@property(nonatomic, strong, readwrite) UIImageView *rightImageView;
+
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
+
 @end
 
 @implementation HomeTableViewCell
@@ -53,8 +57,30 @@
             self.timeLabel.textColor = [UIColor grayColor];
             self.timeLabel;
         })];
+        
+        [self.contentView addSubview:({
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(330, 15, 70, 70)];
+        
+            self.rightImageView;
+        })];
+        
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(290, 80, 30, 20)];
+            self.deleteButton.backgroundColor = [UIColor blueColor];
+            [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
+            [self.deleteButton setTitle:@"Y" forState:UIControlStateSelected];
+            
+            [self.deleteButton addTarget:self action:@selector(handleDeleteButtonTap) forControlEvents:UIControlEventTouchUpInside];
+            
+            self.deleteButton;
+        })];
     }
     return self;
+}
+
+-(void) handleDeleteButtonTap {
+    printf("Delete");
 }
 
 -(void) layoutTableViewCell {
@@ -70,6 +96,8 @@
     self.timeLabel.text = @"18小时前";
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
+
+    self.rightImageView.image = [UIImage imageNamed:@"icon.bundle/icon.png"];
 }
 
 - (void)awakeFromNib {
