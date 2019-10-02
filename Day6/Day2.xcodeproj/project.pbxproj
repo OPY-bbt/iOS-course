@@ -11,6 +11,7 @@
 		472FE06E233D02FE006F3286 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472FE06D233D02FE006F3286 /* ScrollViewController.m */; };
 		472FE072233D8A89006F3286 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 472FE071233D8A89006F3286 /* icon.bundle */; };
 		474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474284E9233EE8CB00089398 /* HomeTableViewCell.m */; };
+		47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */; };
 		47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */; };
 		47F2B54F233A57C800F97088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B54E233A57C800F97088 /* AppDelegate.m */; };
 		47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B551233A57C800F97088 /* SceneDelegate.m */; };
@@ -29,6 +30,8 @@
 		472FE071233D8A89006F3286 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = icon.bundle; path = "../../../../../Downloads/geektime-ios-course-master/project/SampleApp/icon.bundle"; sourceTree = "<group>"; };
 		474284E8233EE8CB00089398 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		474284E9233EE8CB00089398 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		47ABCA4823442E62000762C8 /* HomeTableDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableDeleteCellView.h; sourceTree = "<group>"; };
+		47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableDeleteCellView.m; sourceTree = "<group>"; };
 		47B3C78C2340FCEB00E7EF2E /* DataDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataDetailViewController.h; sourceTree = "<group>"; };
 		47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataDetailViewController.m; sourceTree = "<group>"; };
 		47F2B54A233A57C800F97088 /* Day2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,13 +81,15 @@
 				47F2B54D233A57C800F97088 /* AppDelegate.h */,
 				47F2B54E233A57C800F97088 /* AppDelegate.m */,
 				47F2B550233A57C800F97088 /* SceneDelegate.h */,
+				47F2B551233A57C800F97088 /* SceneDelegate.m */,
 				470954DC233BBA3900520CD8 /* VideoViewController.h */,
 				470954DD233BBA3900520CD8 /* VideoViewController.m */,
 				472FE06C233D02FE006F3286 /* ScrollViewController.h */,
 				472FE06D233D02FE006F3286 /* ScrollViewController.m */,
-				47F2B551233A57C800F97088 /* SceneDelegate.m */,
 				474284E8233EE8CB00089398 /* HomeTableViewCell.h */,
 				474284E9233EE8CB00089398 /* HomeTableViewCell.m */,
+				47ABCA4823442E62000762C8 /* HomeTableDeleteCellView.h */,
+				47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */,
 				472FE071233D8A89006F3286 /* icon.bundle */,
 				47F2B553233A57C800F97088 /* ViewController.h */,
 				47F2B554233A57C800F97088 /* ViewController.m */,
@@ -171,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */,
+				47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */,
 				47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */,
 				470954DE233BBA3900520CD8 /* VideoViewController.m in Sources */,
 				47F2B555233A57C800F97088 /* ViewController.m in Sources */,

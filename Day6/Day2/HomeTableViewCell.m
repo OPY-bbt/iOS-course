@@ -71,8 +71,11 @@
             [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
             [self.deleteButton setTitle:@"Y" forState:UIControlStateSelected];
             
+            self.deleteButton.layer.cornerRadius = 10;
+            self.deleteButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            self.deleteButton.layer.borderWidth = 2;
+
             [self.deleteButton addTarget:self action:@selector(handleDeleteButtonTap) forControlEvents:UIControlEventTouchUpInside];
-            
             self.deleteButton;
         })];
     }
@@ -80,7 +83,9 @@
 }
 
 -(void) handleDeleteButtonTap {
-    printf("Delete");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tabViewCell:clickDeleteButton:)]) {
+        [self.delegate tabViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 -(void) layoutTableViewCell {

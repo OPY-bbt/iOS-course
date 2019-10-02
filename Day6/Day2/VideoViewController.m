@@ -55,7 +55,6 @@
     } else {
         return CGSizeMake((self.view.frame.size.width - 10)/2, 300);
     }
-        
 }
 
 /*
