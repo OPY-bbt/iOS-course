@@ -10,10 +10,12 @@
 #import "HomeTableViewCell.h"
 #import "DataDetailViewController.h"
 #import "HomeTableDeleteCellView.h"
+#import "LoadListData.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate, HomeTableViewCellDelegate>
 @property(nonatomic, strong, readwrite) UITableView *tableView;
 @property(nonatomic, strong, readwrite) NSMutableArray *dataArray;
+@property(nonatomic, strong, readwrite) LoadListData *listDataloader;
 @end
 
 @implementation ViewController
@@ -65,6 +67,9 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
+    
+    self.listDataloader = [[LoadListData alloc] init];
+    [self.listDataloader loadListData];
 }
 
 -(void)tabViewCell:(UITableViewCell *)tabViewCell clickDeleteButton:(UIButton*) deleteButton {

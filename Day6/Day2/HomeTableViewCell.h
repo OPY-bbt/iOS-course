@@ -12,15 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol HomeTableViewCellDelegate <NSObject>
 
--(void)tabViewCell:(UITableViewCell *)tabViewCell clickDeleteButton:(UIButton *) deleteButton;
+- (void)tabViewCell:(UITableViewCell *)tabViewCell clickDeleteButton:(UIButton *)deleteButton;
 
 @end
 
 @interface HomeTableViewCell : UITableViewCell
 
-@property(nonatomic, weak,readwrite) id<HomeTableViewCellDelegate> delegate;
+@property (nonatomic, weak, readwrite) id<HomeTableViewCellDelegate> delegate;
 
--(void) layoutTableViewCell;
+- (void)layoutTableViewCell;
 
 @end
 
