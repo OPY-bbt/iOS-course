@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ListItem;
+
 @protocol HomeTableViewCellDelegate <NSObject>
 
 - (void)tabViewCell:(UITableViewCell *)tabViewCell clickDeleteButton:(UIButton *)deleteButton;
@@ -20,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, readwrite) id<HomeTableViewCellDelegate> delegate;
 
-- (void)layoutTableViewCell;
+- (void)layoutTableViewCellWithItem:(ListItem *)item;
 
 @end
 

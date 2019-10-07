@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DataDetailViewController : UIViewController
 
+-(instancetype) initWithUrlString:(NSString *) urlString;
 @end
 
 NS_ASSUME_NONNULL_END

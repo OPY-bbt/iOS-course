@@ -12,6 +12,7 @@
 		472FE06E233D02FE006F3286 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472FE06D233D02FE006F3286 /* ScrollViewController.m */; };
 		472FE072233D8A89006F3286 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 472FE071233D8A89006F3286 /* icon.bundle */; };
 		473A23B02344CA140036A1B1 /* LoadListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 473A23AF2344CA140036A1B1 /* LoadListData.m */; };
+		473A23B423482D580036A1B1 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 473A23B323482D580036A1B1 /* ListItem.m */; };
 		474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474284E9233EE8CB00089398 /* HomeTableViewCell.m */; };
 		47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */; };
 		47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */; };
@@ -32,6 +33,8 @@
 		472FE071233D8A89006F3286 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = icon.bundle; path = "../../../../../Downloads/geektime-ios-course-master/project/SampleApp/icon.bundle"; sourceTree = "<group>"; };
 		473A23AE2344CA140036A1B1 /* LoadListData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadListData.h; sourceTree = "<group>"; };
 		473A23AF2344CA140036A1B1 /* LoadListData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadListData.m; sourceTree = "<group>"; };
+		473A23B223482D580036A1B1 /* ListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		473A23B323482D580036A1B1 /* ListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 		474284E8233EE8CB00089398 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		474284E9233EE8CB00089398 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		47ABCA4823442E62000762C8 /* HomeTableDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableDeleteCellView.h; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 				5383590B3FF940664F554E76 /* Pods-Day2.debug.xcconfig */,
 				637A5D1C75A758CD52E853FB /* Pods-Day2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +86,15 @@
 				473A23AF2344CA140036A1B1 /* LoadListData.m */,
 			);
 			path = loader;
+			sourceTree = "<group>";
+		};
+		473A23B123482D330036A1B1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				473A23B223482D580036A1B1 /* ListItem.h */,
+				473A23B323482D580036A1B1 /* ListItem.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		47F2B541233A57C800F97088 = {
@@ -107,6 +118,7 @@
 		47F2B54C233A57C800F97088 /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				473A23B123482D330036A1B1 /* model */,
 				473A23AD2344C9F10036A1B1 /* loader */,
 				47F2B54D233A57C800F97088 /* AppDelegate.h */,
 				47F2B54E233A57C800F97088 /* AppDelegate.m */,
@@ -241,6 +253,7 @@
 			files = (
 				474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */,
 				47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */,
+				473A23B423482D580036A1B1 /* ListItem.m in Sources */,
 				47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */,
 				473A23B02344CA140036A1B1 /* LoadListData.m in Sources */,
 				470954DE233BBA3900520CD8 /* VideoViewController.m in Sources */,

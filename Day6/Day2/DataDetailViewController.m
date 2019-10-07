@@ -13,6 +13,7 @@
 
 @property(nonatomic, strong, readwrite) WKWebView *webview;
 @property(nonatomic, strong, readwrite) UIProgressView *progress;
+@property(nonatomic, strong, readwrite) NSString *urlString;
 
 @end
 
@@ -20,6 +21,14 @@
 
 -(void)dealloc {
     [self.webview removeObserver:self forKeyPath:@"estimatedProgress"];
+}
+
+-(instancetype) initWithUrlString:(NSString *) urlString {
+    self = [self init];
+    if(self) {
+        self.urlString = urlString;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -36,7 +45,7 @@
     })];
     
     self.webview.navigationDelegate = self;
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
     [self.webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
 
