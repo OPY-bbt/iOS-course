@@ -16,9 +16,10 @@
     NSString *urlString = @"http://v.juhe.cn/toutiao/index?type=top&key=4884a92ba9222dfd1fde025315d18294";
     NSURL *listUrl = [NSURL URLWithString:urlString];
 
+    __weak typeof(self) weakSelf = self;
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithURL:listUrl completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
-//        NSLog(@"123");
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         NSError *jsonError;
         id jsonObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         NSArray *dataArray = jsonObj[@"result"][@"data"];
@@ -29,6 +30,8 @@
             [l configWithJson:data];
             [array addObject:l];
         }
+        
+        [strongSelf _archiveListDataWithArray: array.copy];
 
         //保证回调在主线程中执行
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -45,6 +48,41 @@
 //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //
 //    }];
+}
+
+-(void) _archiveListDataWithArray: (NSArray<ListItem *> *)array{
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSString *dataPath = [cachePath stringByAppendingPathComponent:@"GTDATA"];
+    
+    NSError *error;
+    [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    NSString *listPath = [dataPath stringByAppendingPathComponent:@"list"];
+    
+    NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
+    [fileManager createFileAtPath:listPath contents:listData attributes:nil];
+    
+    NSData *readListData = [fileManager contentsAtPath:listPath];
+    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [ListItem class], nil] fromData:readListData error:nil];
+    
+    NSLog(@"");
+    // 查询文件
+//    BOOL fileExist = [fileManager fileExistsAtPath:listPath];
+    
+    // 删除文件
+//    if (fileExist) {
+//        NSURL *url = [NSURL fileURLWithPath:listPath];
+//        [fileManager removeItemAtURL: url error:nil];
+//    }
+//    NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:listPath];
+//    [fileHandler seekToEndOfFile];
+//    [fileHandler writeData:[@"def" dataUsingEncoding:NSUTF8StringEncoding]];
+//    [fileHandler synchronizeFile];
+//    [fileHandler closeFile];
 }
 
 @end
