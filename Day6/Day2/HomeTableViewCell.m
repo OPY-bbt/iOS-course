@@ -8,6 +8,7 @@
 
 #import "HomeTableViewCell.h"
 #import "ListItem.h"
+#import "SDWebImage.h"
 
 @interface HomeTableViewCell ()
 
@@ -94,6 +95,13 @@
 - (void)layoutTableViewCellWithItem:(ListItem *)item {
     self.titleLabel.text = item.title;
 
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniquekey];
+    if (hasRead) {
+        self.titleLabel.textColor = [UIColor grayColor];
+    } else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
+
     self.sourceLabel.text = item.author_name;
     [self.sourceLabel sizeToFit];
 
@@ -104,10 +112,26 @@
     self.timeLabel.text = item.date;
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
+//    NSThread *downloadImageThread = [[NSThread alloc] initWithBlock:^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.thumbnail_pic_s]]];
+//        self.rightImageView.image = image;
+//    }];
+//    downloadImageThread.name = @"downloadImageTHread";
+//    [downloadImageThread start];
 
-#warning UIImage
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.thumbnail_pic_s]]];
-    self.rightImageView.image = image;
+//    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
+    
+//    dispatch_async(downloadQueue, ^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.thumbnail_pic_s]]];
+//        dispatch_async(mainQueue, ^{
+//            self.rightImageView.image = image;
+//        });
+//    });
+    
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:item.thumbnail_pic_s] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        self.rightImageView.image = image;
+    }];
 }
 
 - (void)awakeFromNib {

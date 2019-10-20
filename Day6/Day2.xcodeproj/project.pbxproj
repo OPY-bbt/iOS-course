@@ -16,6 +16,7 @@
 		474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474284E9233EE8CB00089398 /* HomeTableViewCell.m */; };
 		47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */; };
 		47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */; };
+		47DF0591235C536E0019E5C0 /* VideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DF0590235C536E0019E5C0 /* VideoCoverView.m */; };
 		47F2B54F233A57C800F97088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B54E233A57C800F97088 /* AppDelegate.m */; };
 		47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B551233A57C800F97088 /* SceneDelegate.m */; };
 		47F2B555233A57C800F97088 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B554233A57C800F97088 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableDeleteCellView.m; sourceTree = "<group>"; };
 		47B3C78C2340FCEB00E7EF2E /* DataDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataDetailViewController.h; sourceTree = "<group>"; };
 		47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataDetailViewController.m; sourceTree = "<group>"; };
+		47DF058F235C536E0019E5C0 /* VideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCoverView.h; sourceTree = "<group>"; };
+		47DF0590235C536E0019E5C0 /* VideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCoverView.m; sourceTree = "<group>"; };
 		47F2B54A233A57C800F97088 /* Day2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F2B54D233A57C800F97088 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47F2B54E233A57C800F97088 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +100,17 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		47DF058E235C4F3C0019E5C0 /* VideoController */ = {
+			isa = PBXGroup;
+			children = (
+				470954DC233BBA3900520CD8 /* VideoViewController.h */,
+				470954DD233BBA3900520CD8 /* VideoViewController.m */,
+				47DF058F235C536E0019E5C0 /* VideoCoverView.h */,
+				47DF0590235C536E0019E5C0 /* VideoCoverView.m */,
+			);
+			path = VideoController;
+			sourceTree = "<group>";
+		};
 		47F2B541233A57C800F97088 = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +132,13 @@
 		47F2B54C233A57C800F97088 /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
+				47DF058E235C4F3C0019E5C0 /* VideoController */,
 				473A23B123482D330036A1B1 /* model */,
 				473A23AD2344C9F10036A1B1 /* loader */,
 				47F2B54D233A57C800F97088 /* AppDelegate.h */,
 				47F2B54E233A57C800F97088 /* AppDelegate.m */,
 				47F2B550233A57C800F97088 /* SceneDelegate.h */,
 				47F2B551233A57C800F97088 /* SceneDelegate.m */,
-				470954DC233BBA3900520CD8 /* VideoViewController.h */,
-				470954DD233BBA3900520CD8 /* VideoViewController.m */,
 				472FE06C233D02FE006F3286 /* ScrollViewController.h */,
 				472FE06D233D02FE006F3286 /* ScrollViewController.m */,
 				474284E8233EE8CB00089398 /* HomeTableViewCell.h */,
@@ -259,6 +272,7 @@
 				470954DE233BBA3900520CD8 /* VideoViewController.m in Sources */,
 				47F2B555233A57C800F97088 /* ViewController.m in Sources */,
 				47F2B54F233A57C800F97088 /* AppDelegate.m in Sources */,
+				47DF0591235C536E0019E5C0 /* VideoCoverView.m in Sources */,
 				472FE06E233D02FE006F3286 /* ScrollViewController.m in Sources */,
 				47F2B560233A57CB00F97088 /* main.m in Sources */,
 				47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */,

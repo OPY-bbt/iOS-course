@@ -15,6 +15,11 @@
 - (void)loadListDataWithFinishBlock:(ListLoaderFinishBlock)finishBlock {
     NSString *urlString = @"http://v.juhe.cn/toutiao/index?type=top&key=4884a92ba9222dfd1fde025315d18294";
     NSURL *listUrl = [NSURL URLWithString:urlString];
+    
+    NSArray<ListItem *> *localData = [self _readDataFromLocal];
+    if (localData) {
+        finishBlock(YES, localData);
+    }
 
     __weak typeof(self) weakSelf = self;
     NSURLSession *session = [NSURLSession sharedSession];
@@ -50,6 +55,22 @@
 //    }];
 }
 
+- (NSArray<ListItem *> *) _readDataFromLocal {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    
+    NSString *listPath = [cachePath stringByAppendingPathComponent:@"GTDATA/list"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSData *readListData = [fileManager contentsAtPath:listPath];
+    
+    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [ListItem class], nil] fromData:readListData error:nil];
+    
+    if ([unarchiveObj isKindOfClass:[NSArray class]] && [unarchiveObj count] > 0) {
+        return (NSArray<ListItem *> *)unarchiveObj;
+    }
+    return nil;
+}
+
 -(void) _archiveListDataWithArray: (NSArray<ListItem *> *)array{
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cachePath = [pathArray firstObject];
@@ -66,8 +87,8 @@
     NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
     [fileManager createFileAtPath:listPath contents:listData attributes:nil];
     
-    NSData *readListData = [fileManager contentsAtPath:listPath];
-    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [ListItem class], nil] fromData:readListData error:nil];
+//    NSData *readListData = [fileManager contentsAtPath:listPath];
+//    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [ListItem class], nil] fromData:readListData error:nil];
     
     NSLog(@"");
     // 查询文件

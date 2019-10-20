@@ -58,6 +58,8 @@
     DataDetailViewController *viewController = [[DataDetailViewController alloc] initWithUrlString:item.url];
     viewController.title = item.title;// [NSString stringWithFormat: @"%@", url];
     [self.navigationController pushViewController:viewController animated:YES];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
 - (void)viewDidLoad {
