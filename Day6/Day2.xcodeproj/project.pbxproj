@@ -16,6 +16,7 @@
 		474284EA233EED5800089398 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474284E9233EE8CB00089398 /* HomeTableViewCell.m */; };
 		47ABCA4A23442E62000762C8 /* HomeTableDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */; };
 		47B3C78E2340FCEB00E7EF2E /* DataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */; };
+		47C974522365317900FD1040 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C974512365317900FD1040 /* VideoPlayer.m */; };
 		47DF0591235C536E0019E5C0 /* VideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DF0590235C536E0019E5C0 /* VideoCoverView.m */; };
 		47F2B54F233A57C800F97088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B54E233A57C800F97088 /* AppDelegate.m */; };
 		47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F2B551233A57C800F97088 /* SceneDelegate.m */; };
@@ -38,10 +39,13 @@
 		473A23B323482D580036A1B1 /* ListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 		474284E8233EE8CB00089398 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		474284E9233EE8CB00089398 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		47881A6F2361F358007B943F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		47ABCA4823442E62000762C8 /* HomeTableDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableDeleteCellView.h; sourceTree = "<group>"; };
 		47ABCA4923442E62000762C8 /* HomeTableDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableDeleteCellView.m; sourceTree = "<group>"; };
 		47B3C78C2340FCEB00E7EF2E /* DataDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataDetailViewController.h; sourceTree = "<group>"; };
 		47B3C78D2340FCEB00E7EF2E /* DataDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataDetailViewController.m; sourceTree = "<group>"; };
+		47C974502365317900FD1040 /* VideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		47C974512365317900FD1040 /* VideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
 		47DF058F235C536E0019E5C0 /* VideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCoverView.h; sourceTree = "<group>"; };
 		47DF0590235C536E0019E5C0 /* VideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCoverView.m; sourceTree = "<group>"; };
 		47F2B54A233A57C800F97088 /* Day2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,8 @@
 				470954DD233BBA3900520CD8 /* VideoViewController.m */,
 				47DF058F235C536E0019E5C0 /* VideoCoverView.h */,
 				47DF0590235C536E0019E5C0 /* VideoCoverView.m */,
+				47C974502365317900FD1040 /* VideoPlayer.h */,
+				47C974512365317900FD1040 /* VideoPlayer.m */,
 			);
 			path = VideoController;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 		91E284F2B623F1F31B4E6A68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47881A6F2361F358007B943F /* CFNetwork.framework */,
 				EBAAAA6D51A43E4F78D27980 /* libPods-Day2.a */,
 			);
 			name = Frameworks;
@@ -275,6 +282,7 @@
 				47DF0591235C536E0019E5C0 /* VideoCoverView.m in Sources */,
 				472FE06E233D02FE006F3286 /* ScrollViewController.m in Sources */,
 				47F2B560233A57CB00F97088 /* main.m in Sources */,
+				47C974522365317900FD1040 /* VideoPlayer.m in Sources */,
 				47F2B552233A57C800F97088 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Day2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Day2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

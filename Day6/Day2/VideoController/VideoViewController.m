@@ -49,7 +49,7 @@
     cell.backgroundColor = [UIColor redColor];
     
     if ([cell isKindOfClass: [VideoCoverView class]]) {
-        [cell layoutWithVideoCoverUrl: @"icon.bundle/placeHolder.png" videoUrl: @"videoUrl"];
+        [cell layoutWithVideoCoverUrl: @"icon.bundle/placeHolder.png" videoUrl: @"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
     }
     return cell;
 }
